@@ -179,33 +179,36 @@ button {
     font-size: 1.1rem;
 }
 
-/* Mobile Navigation */
+/*═══════════════════════════════════════
+  📱 NEW MOBILE NAVIGATION (FIXED VERSION)
+═══════════════════════════════════════*/
 .mobile-nav {
     position: fixed;
     top: 0;
-    left: -100%;
+    height: 100%;
     width: 80%;
     max-width: 300px;
-    height: 100vh;
     background: var(--bg-primary);
     box-shadow: var(--shadow-lg);
     z-index: 2000;
-    transition: left 0.3s ease;
     overflow-y: auto;
+    transition: transform 0.35s ease;
+    
+    /* hidden default */
+    transform: translateX(-100%);
+    left: 0; /* Added for stability */
 }
 
+/* RTL → menu opens from the RIGHT */
 body[dir="rtl"] .mobile-nav {
-    left: auto;
-    right: -100%;
+    transform: translateX(100%);
+    left: auto; /* Reset left */
+    right: 0;   /* Align to right */
 }
 
+/* Active State */
 .mobile-nav.active {
-    left: 0;
-}
-
-body[dir="rtl"] .mobile-nav.active {
-    left: auto;
-    right: 0;
+    transform: translateX(0);
 }
 
 .mobile-nav-content {
@@ -213,7 +216,7 @@ body[dir="rtl"] .mobile-nav.active {
 }
 
 .close-btn {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--text-primary);
     margin-bottom: 2rem;
 }
@@ -223,15 +226,16 @@ body[dir="rtl"] .mobile-nav.active {
 }
 
 .nav-links li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .nav-links a {
     display: block;
     padding: 1rem;
     border-radius: var(--radius);
+    font-weight: 600;
     color: var(--text-primary);
-    font-weight: 500;
+    transition: 0.2s;
 }
 
 .nav-links a:hover {
