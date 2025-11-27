@@ -1,36 +1,36 @@
-# ════════════════════════════════════════════════════════════
+# ============================================================
 # ENGLISH VERSION - Doctor Portfolio Data
-# ════════════════════════════════════════════════════════════
+# ============================================================
 
-# ════════════════════════════════════════════════════════════
-# SECTION 1: HERO (Profile)
-# ════════════════════════════════════════════════════════════
+# ============================================================
+# SECTION 1: HERO
+# ============================================================
 hero:
   name: "Dr. Michael Nabil"
   tagline: "Dental Surgeon & endodontist"
   graduation: "Class of 2025"
   current_position:
-    role: "Operator"  # Options: "Operator", "Assistant", leave empty if not working
-    clinic: "MICKY clinic"  # Leave empty if not applicable
-  profile_image: "10-profile.jpg"  # Image in static/images/
+    role: "Operator"
+    clinic: "MICKY clinic"
+  profile_image: "10-profile.jpg"
 
-# ════════════════════════════════════════════════════════════
+# ============================================================
 # SECTION 2: SKILLS
-# ════════════════════════════════════════════════════════════
+# ============================================================
 skills:
   clinical:
     - "Oral Surgery"
     - "Endodontics"
     - "Prosthodontics"
     - "Cosmetic Dentistry"
-  
+
   digital:
     - "Dental portfolio creator full coding"
     - "dental website full coding"
     - "Digital Documentation"
     - "Microsoft PowerPoint (professional)"
     - "Microsoft Excel"
-  
+
   soft:
     - "Pediatric Patient Management"
     - "Patient Communication"
@@ -39,25 +39,23 @@ skills:
     - "Team Leadership"
     - "Emergency Response"
 
-# ════════════════════════════════════════════════════════════
-# SECTION 3: EDUCATION & TIMELINE
-# ════════════════════════════════════════════════════════════
+# ============================================================
+# SECTION 3: EDUCATION
+# ============================================================
 education:
   university: "Egyptian Russian University Faculty of Dentistry"
   graduation_year: "2025"
-  
-  # Academic Degrees (leave empty if not obtained)
+
   master:
-    obtained: true  # true or false
+    obtained: true
     title: "Master in Oral & Maxillofacial Surgery-for test"
     year: "2027"
-  
+
   phd:
-    obtained: false  # true or false
-    title: ""  # Leave empty if not obtained
+    obtained: false
+    title: ""
     year: ""
-  
-  # Timeline
+
   timeline:
     - year: "2020"
       event: "Started Faculty of Dentistry"
@@ -69,8 +67,7 @@ education:
       event: "Started Working at MICKY Clinic"
     - year: "2028"
       event: "Opened Private Practice"
-  
-  # Certificates (Images)
+
   certificates:
     - title: "DENTAL IMPLANTOLOGY - 30H CREDIT"
       image: "30-cert-01.jpg"
@@ -81,9 +78,9 @@ education:
     - title: "DIGITAL SMILE DESIGN WORKSHOP"
       image: "30-cert-04.jpg"
 
-# ════════════════════════════════════════════════════════════
-# SECTION 4: CLINICAL CASES (Before/After)
-# ════════════════════════════════════════════════════════════
+# ============================================================
+# SECTION 4: CLINICAL CASES (UPDATED WITH enabled)
+# ============================================================
 clinical_cases:
   - enabled: true
     category: "Endodontics"
@@ -94,9 +91,9 @@ clinical_cases:
       - before: "40-endo-before-02.jpg"
         after: "40-endo-after-02.jpg"
         description: "Complex endodontic case"
-  
-  -enabled: false
-   category: "Veneers"
+
+  - enabled: true
+    category: "Veneers"
     cases:
       - before: "40-veneer-before-01.jpg"
         after: "40-veneer-after-01.jpg"
@@ -104,51 +101,42 @@ clinical_cases:
       - before: "40-veneer-before-02.jpg"
         after: "40-veneer-after-02.jpg"
         description: "Anterior aesthetic restoration"
-  
-  -enabled: false
+
+  - enabled: true
     category: "Orthodontics"
     cases:
       - before: "40-ortho-before-01.jpg"
         after: "40-ortho-after-01.jpg"
         description: "Clear aligner treatment"
-  
-  - category: "Crowns & Bridges"
+
+  - enabled: true
+    category: "Crowns & Bridges"
     cases:
       - before: "40-crown-before-01.jpg"
         after: "40-crown-after-01.jpg"
         description: "Full E-MAX 4 crowns restoration"
-      - before: "40-crown-before-02.jpg"
-        after: "40-crown-after-02.jpg"
-        description: "upper bridge"
 
-# ════════════════════════════════════════════════════════════
-# SECTION 5: BLOG
-# Note: Blog posts are in content/blog/ as .md files
-# ════════════════════════════════════════════════════════════
-
-# ════════════════════════════════════════════════════════════
+# ============================================================
 # SECTION 6: CONTACT
-# ════════════════════════════════════════════════════════════
+# ============================================================
 contact:
   phone: "+201271476215"
-  whatsapp: "+201271476215"  # Leave empty to hide
+  whatsapp: "+201271476215"
   email: "michaelnabilofficial1@gmail.com"
-  
-  # Social Media (leave empty to hide)
+
   instagram: "https://www.instagram.com/michaelnabilofficial/"
   facebook: "https://facebook.com/Micky2452"
   linkedin: "https://linkedin.com"
-  
-  # Location & Map (leave empty to hide map)
+
   location:
-    enabled: true  # Set to false to hide map section
+    enabled: true
     address: "مستشفيات جامعة الزقازيق"
     latitude: "30.585070727964393"
     longitude: "31.487296675825437"
-#30.585070727964393, 31.487296675825437
-# ════════════════════════════════════════════════════════════
-# THEME SETTINGS
-# ════════════════════════════════════════════════════════════
+
+# ============================================================
+# THEME
+# ============================================================
 theme:
   primary_color: "#2563eb"
   secondary_color: "#1e40af"
