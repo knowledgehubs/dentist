@@ -101,3 +101,25 @@
     });
   });
 })();
+// === DOWNLOAD PORTFOLIO AS PDF ===
+(function () {
+    const downloadBtn = document.getElementById("downloadCV");
+
+    if (!downloadBtn) return;
+
+    downloadBtn.addEventListener("click", function () {
+
+        // العنصر المراد تحويله PDF
+        const element = document.querySelector(".portfolio-container") || document.body;
+
+        const opt = {
+            margin:       0,
+            filename:     'Dr_Micky_Portfolio.pdf',
+            image:        { type: 'jpeg', quality: 1 },
+            html2canvas:  { scale: 2, useCORS: true },
+            jsPDF:        { unit: 'pt', format: 'a4', orientation: 'portrait' }
+        };
+
+        html2pdf().from(element).set(opt).save();
+    });
+})();
