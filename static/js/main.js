@@ -103,23 +103,75 @@
 // =====================================================
 // PDF DOWNLOAD — Working Perfectly
 // =====================================================
+// =====================================================
+// PDF DOWNLOAD — Robust version (waits for html2pdf, shows loading, error handling)
+// =====================================================
 (function () {
-    const downloadBtn = document.getElementById("downloadCV");
+  const downloadBtn = document.getElementById("downloadCV");
+  if (!downloadBtn) return;
 
-    if (!downloadBtn) return;
+  // small spinner element (will be injected)
+  function setLoading(state) {
+    if (state) {
+      downloadBtn.setAttribute("disabled", "true");
+      downloadBtn.classList.add("loading");
+      if (!downloadBtn.querySelector(".spinner")) {
+        const sp = document.createElement("span");
+        sp.className = "spinner";
+        sp.style.marginLeft = "6px";
+        sp.innerHTML = `<svg width="14" height="14" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="currentColor" stroke-width="4" d="M25 5a20 20 0 1 0 20 20" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.9s" repeatCount="indefinite" /></path></svg>`;
+        downloadBtn.appendChild(sp);
+      }
+    } else {
+      downloadBtn.removeAttribute("disabled");
+      downloadBtn.classList.remove("loading");
+      const sp = downloadBtn.querySelector(".spinner");
+      if (sp) sp.remove();
+    }
+  }
 
-    downloadBtn.addEventListener("click", function () {
+  async function waitForHtml2Pdf(timeout = 5000) {
+    const start = Date.now();
+    while (typeof window.html2pdf === "undefined") {
+      if (Date.now() - start > timeout) throw new Error("html2pdf not loaded");
+      // eslint-disable-next-line no-await-in-loop
+      await new Promise((r) => setTimeout(r, 100));
+    }
+    return window.html2pdf;
+  }
 
-        const element = document.querySelector(".portfolio-container") || document.body;
+  downloadBtn.addEventListener("click", async function () {
+    try {
+      setLoading(true);
 
-        const opt = {
-            margin: 0,
-            filename: 'Dr_Micky_Portfolio.pdf',
-            image: { type: 'jpeg', quality: 1 },
-            html2canvas: { scale: 2, useCORS: true },
-            jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' }
-        };
+      // ensure library is present
+      await waitForHtml2Pdf(7000); // 7s timeout
 
-        html2pdf().from(element).set(opt).save();
-    });
+      // the element to capture
+      const element = document.querySelector(".portfolio-container") || document.body;
+
+      // small pre-adjustments for print (optional)
+      element.classList.add("html2pdf-active");
+
+      const opt = {
+        margin: 12, // small margin
+        filename: `Dr_Micky_Portfolio_${(new Date()).toISOString().slice(0,10)}.pdf`,
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, logging: false },
+        jsPDF: { unit: "pt", format: "a4", orientation: "portrait" }
+      };
+
+      // trigger download (returns a Promise)
+      await window.html2pdf().from(element).set(opt).save();
+
+      // cleanup
+      element.classList.remove("html2pdf-active");
+      setLoading(false);
+    } catch (err) {
+      setLoading(false);
+      console.error("PDF generation error:", err);
+      // user friendly alert
+      alert("فشل تنزيل الملف. تحقق من Console للمزيد من التفاصيل (html2pdf).");
+    }
+  });
 })();
