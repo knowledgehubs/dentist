@@ -1,1 +1,43 @@
-
+<section id="skills" class="section skills-section">
+    <div class="section-header">
+        <div class="icon-circle">
+            <i class="fas fa-star"></i>
+        </div>
+        <h2 class="section-title" data-en="Professional Skills" data-ar="المهارات المهنية">Professional Skills</h2>
+    </div>
+    
+    <div class="skills-container">
+        <!-- Clinical Skills -->
+        <div class="skill-category">
+            <h3 class="skill-category-title" data-en="Clinical Skills" data-ar="المهارات السريرية">
+                <i class="fas fa-tooth"></i>
+                Clinical Skills
+            </h3>
+            <div class="skill-list">
+                {{ range $index, $skill := .Site.Data.en.skills.clinical }}
+                <div class="skill-item">
+                    <span class="skill-number">{{ add $index 1 }}</span>
+                    <span class="skill-text" data-en="{{ $skill }}" data-ar="{{ index $.Site.Data.ar.skills.clinical $index }}">
+                        {{ $skill }}
+                    </span>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        
+        <!-- Digital Skills -->
+        <div class="skill-category">
+            <h3 class="skill-category-title" data-en="Digital Skills" data-ar="المهارات الرقمية">
+                <i class="fas fa-laptop"></i>
+                Digital Skills
+            </h3>
+            <div class="skill-list">
+                {{ range $index, $skill := .Site.Data.en.skills.digital }}
+                <div class="skill-item">
+                    <span class="skill-number">{{ add $index 1 }}</span>
+                    <span class="skill-text" data-en="{{ $skill }}" data-ar="{{ index $.Site.Data.ar.skills.digital $index }}">
+                        {{ $skill }}
+                    </span>
+                </div>
+                {{ end }}
+            </div>
