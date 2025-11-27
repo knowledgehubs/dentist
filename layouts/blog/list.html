@@ -1,1 +1,39 @@
-
+{{ define "main" }}
+<div class="blog-page-container">
+    <div class="blog-header">
+        <h1>{{ .Title }}</h1>
+    </div>
+    
+    <div class="blog-posts-grid">
+        {{ range .Pages }}
+        <article class="blog-post-card">
+            {{ if .Params.thumbnail }}
+            <div class="blog-post-image">
+                <img src="{{ print "images/" .Params.thumbnail | relURL }}" alt="{{ .Title }}" loading="lazy">
+            </div>
+            {{ end }}
+            
+            <div class="blog-post-content">
+                <div class="blog-post-meta">
+                    <span class="blog-post-date">{{ .Date.Format "January 2, 2006" }}</span>
+                </div>
+                
+                <h2 class="blog-post-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+                
+                <p class="blog-post-excerpt">
+                    {{ if .Params.excerpt }}
+                        {{ .Params.excerpt }}
+                    {{ else }}
+                        {{ .Summary }}
+                    {{ end }}
+                </p>
+                
+                <a href="{{ .Permalink }}" class="btn btn-primary">Read More</a>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
