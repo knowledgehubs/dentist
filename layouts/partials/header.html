@@ -1,1 +1,44 @@
-
+<header class="header" id="header">
+    <div class="header-content">
+        <!-- Menu Button -->
+        <button class="menu-btn" id="menuBtn" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Logo & Name -->
+        <div class="header-logo">
+            <h1 class="header-name">{{ .Site.Data.en.hero.name }}</h1>
+        </div>
+        
+        <!-- Controls -->
+        <div class="header-controls">
+            <!-- Language Toggle -->
+            <button class="lang-toggle" id="langToggle" aria-label="Toggle Language">
+                <i class="fas fa-language"></i>
+                <span class="lang-text" data-en="AR" data-ar="EN">AR</span>
+            </button>
+            
+            <!-- Theme Toggle -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-content">
+            <button class="close-btn" id="closeBtn" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home" data-en="Profile" data-ar="الملف الشخصي">Profile</a></li>
+                <li><a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a></li>
+                <li><a href="#education" data-en="Education" data-ar="التعليم">Education</a></li>
+                <li><a href="#cases" data-en="Clinical Cases" data-ar="الحالات السريرية">Clinical Cases</a></li>
+                <li><a href="#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
+                <li><a href="#contact" data-en="Contact" data-ar="التواصل">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
