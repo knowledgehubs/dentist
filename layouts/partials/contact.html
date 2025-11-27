@@ -1,1 +1,110 @@
-
+<section id="contact" class="section contact-section">
+    <div class="section-header">
+        <div class="icon-circle">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <h2 class="section-title" data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</h2>
+        <p class="section-subtitle" data-en="Let's connect and collaborate" data-ar="لنتواصل ونتعاون">Let's connect and collaborate</p>
+    </div>
+    
+    <div class="contact-container">
+        <!-- Contact Methods -->
+        <div class="contact-methods">
+            <!-- Phone -->
+            {{ if .Site.Data.en.contact.phone }}
+            <a href="tel:{{ .Site.Data.en.contact.phone }}" class="contact-method">
+                <div class="contact-icon phone">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-info">
+                    <span class="contact-label" data-en="Phone" data-ar="الهاتف">Phone</span>
+                    <span class="contact-value">{{ .Site.Data.en.contact.phone }}</span>
+                </div>
+            </a>
+            {{ end }}
+            
+            <!-- WhatsApp -->
+            {{ if .Site.Data.en.contact.whatsapp }}
+            <a href="https://wa.me/{{ replace .Site.Data.en.contact.whatsapp " " "" | replace "+" "" }}" target="_blank" class="contact-method">
+                <div class="contact-icon whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-info">
+                    <span class="contact-label" data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
+                    <span class="contact-value">{{ .Site.Data.en.contact.whatsapp }}</span>
+                </div>
+            </a>
+            {{ end }}
+            
+            <!-- Email -->
+            {{ if .Site.Data.en.contact.email }}
+            <a href="mailto:{{ .Site.Data.en.contact.email }}" class="contact-method">
+                <div class="contact-icon email">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-info">
+                    <span class="contact-label" data-en="Email" data-ar="البريد الإلكتروني">Email</span>
+                    <span class="contact-value">{{ .Site.Data.en.contact.email }}</span>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+        
+        <!-- Social Media -->
+        <div class="social-media">
+            <h3 class="social-title" data-en="Follow Me" data-ar="تابعني">Follow Me</h3>
+            <div class="social-links">
+                {{ if .Site.Data.en.contact.instagram }}
+                <a href="{{ .Site.Data.en.contact.instagram }}" target="_blank" rel="noopener" class="social-link instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                {{ end }}
+                
+                {{ if .Site.Data.en.contact.facebook }}
+                <a href="{{ .Site.Data.en.contact.facebook }}" target="_blank" rel="noopener" class="social-link facebook" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                {{ end }}
+                
+                {{ if .Site.Data.en.contact.linkedin }}
+                <a href="{{ .Site.Data.en.contact.linkedin }}" target="_blank" rel="noopener" class="social-link linkedin" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+        
+        <!-- Location & Map -->
+        {{ if .Site.Data.en.contact.location.enabled }}
+        <div class="location-container">
+            <h3 class="location-title" data-en="Location" data-ar="الموقع">Location</h3>
+            <p class="location-address" data-en="{{ .Site.Data.en.contact.location.address }}" data-ar="{{ .Site.Data.ar.contact.location.address }}">
+                {{ .Site.Data.en.contact.location.address }}
+            </p>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps?q={{ .Site.Data.en.contact.location.latitude }},{{ .Site.Data.en.contact.location.longitude }}&hl=en&z=14&output=embed"
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            
+            <a 
+                href="https://www.google.com/maps/search/?api=1&query={{ .Site.Data.en.contact.location.latitude }},{{ .Site.Data.en.contact.location.longitude }}" 
+                target="_blank" 
+                class="btn btn-secondary"
+                data-en="Get Directions" 
+                data-ar="احصل على الاتجاهات"
+            >
+                <i class="fas fa-directions"></i>
+                Get Directions
+            </a>
+        </div>
+        {{ end }}
+    </div>
+</section>
