@@ -6,24 +6,18 @@
     <meta name="description" content="{{ .Site.Params.description }}">
     <title>{{ if .IsHome }}{{ .Site.Data.en.hero.name }} - {{ .Site.Data.en.hero.tagline }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
     
-    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ "images/favicon.ico" | relURL }}">
     
-    <!-- PDF Generation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
 </head>
 <body class="light-mode" data-lang="{{ .Site.Language.Lang }}">
     {{ partial "header.html" . }}
@@ -34,18 +28,15 @@
     
     {{ partial "footer.html" . }}
     
-    <!-- Download CV Button -->
     <button id="downloadCV" class="download-cv-btn" aria-label="Download CV">
         <i class="fas fa-download"></i>
         <span class="download-text">Download CV</span>
     </button>
     
-    <!-- Scroll to Top Button -->
     <button id="scrollTop" class="scroll-top-btn" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
     </button>
     
-    <!-- Custom JavaScript -->
-    <script src="{{ "js/main.js" | relURL }}"></script>
+    <script src="{{ "js/main.js" | relURL }}" defer></script>
 </body>
 </html>
