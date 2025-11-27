@@ -7,11 +7,11 @@
 # ════════════════════════════════════════════════════════════
 hero:
   name: "Dr. Michael Nabil"
-  tagline: "Dental Surgeon & Implantologist"
+  tagline: "Dental Surgeon & endodontist"
   graduation: "Class of 2025"
   current_position:
     role: "Operator"  # Options: "Operator", "Assistant", leave empty if not working
-    clinic: "Elite Dental Clinic"  # Leave empty if not applicable
+    clinic: "MICKY clinic"  # Leave empty if not applicable
   profile_image: "10-profile.jpg"  # Image in static/images/
 
 # ════════════════════════════════════════════════════════════
@@ -19,20 +19,17 @@ hero:
 # ════════════════════════════════════════════════════════════
 skills:
   clinical:
-    - "Dental Implantology"
-    - "Orthodontics"
+    - "Oral Surgery"
     - "Endodontics"
     - "Prosthodontics"
-    - "Oral Surgery"
     - "Cosmetic Dentistry"
   
   digital:
-    - "Photoshop (Dental Photography)"
+    - "Dental portfolio creator full coding"
+    - "dental website full coding"
     - "Digital Documentation"
-    - "Microsoft PowerPoint"
+    - "Microsoft PowerPoint (professional)"
     - "Microsoft Excel"
-    - "3D Treatment Planning"
-    - "CAD/CAM Design"
   
   soft:
     - "Pediatric Patient Management"
@@ -46,13 +43,13 @@ skills:
 # SECTION 3: EDUCATION & TIMELINE
 # ════════════════════════════════════════════════════════════
 education:
-  university: "Cairo University Faculty of Dentistry"
+  university: "Egyptian Russian University Faculty of Dentistry"
   graduation_year: "2025"
   
   # Academic Degrees (leave empty if not obtained)
   master:
     obtained: true  # true or false
-    title: "Master in Oral & Maxillofacial Surgery"
+    title: "Master in Oral & Maxillofacial Surgery-for test"
     year: "2027"
   
   phd:
@@ -69,7 +66,7 @@ education:
     - year: "2025-2026"
       event: "Internship at University Hospital"
     - year: "2027"
-      event: "Started Working at Elite Dental Clinic"
+      event: "Started Working at MICKY Clinic"
     - year: "2028"
       event: "Opened Private Practice"
   
@@ -116,7 +113,7 @@ clinical_cases:
     cases:
       - before: "40-crown-before-01.jpg"
         after: "40-crown-after-01.jpg"
-        description: "Full ceramic crown restoration"
+        description: "Full E-MAX 4 crowns restoration"
 
 # ════════════════════════════════════════════════════════════
 # SECTION 5: BLOG
@@ -127,22 +124,22 @@ clinical_cases:
 # SECTION 6: CONTACT
 # ════════════════════════════════════════════════════════════
 contact:
-  phone: "+20 100 123 4567"
-  whatsapp: "+20 100 123 4567"  # Leave empty to hide
-  email: "dr.michael@example.com"
+  phone: "+201271476215"
+  whatsapp: "+201271476215"  # Leave empty to hide
+  email: "michaelnabilofficial1@gmail.com"
   
   # Social Media (leave empty to hide)
-  instagram: "https://instagram.com/dr.michael"
-  facebook: "https://facebook.com/dr.michael"
-  linkedin: "https://linkedin.com/in/dr-michael"
+  instagram: "https://www.instagram.com/michaelnabilofficial/"
+  facebook: "https://facebook.com/Micky2452"
+  linkedin: "https://linkedin.com"
   
   # Location & Map (leave empty to hide map)
   location:
     enabled: true  # Set to false to hide map section
-    address: "123 Medical Street, Cairo, Egypt"
-    latitude: "30.0444"
-    longitude: "31.2357"
-
+    address: "مستشفيات جامعة الزقازيق"
+    latitude: "30.585070727964393"
+    longitude: "31.487296675825437"
+#30.585070727964393, 31.487296675825437
 # ════════════════════════════════════════════════════════════
 # THEME SETTINGS
 # ════════════════════════════════════════════════════════════
