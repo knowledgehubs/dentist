@@ -1,10 +1,15 @@
 {{ define "main" }}
-<div class="portfolio-container">
-    {{ partial "hero.html" . }}
-    {{ partial "skills.html" . }}
-    {{ partial "education.html" . }}
-    {{ partial "cases.html" . }}
-    {{ partial "blog-list.html" . }}
-    {{ partial "contact.html" . }}
-</div>
+  {{/* هذا هو الهيكل الذي يستدعي الأقسام */}}
+  
+  {{/* 1. قسم الشاشة الافتتاحية */}}
+  {{ partial "hero.html" . }}
+
+  {{/* 2. باقي الأقسام (تأكد من وجود الملفات المقابلة) */}}
+  <div class="container">
+      {{/* يمكنك إضافة أقسام أخرى هنا لاحقاً */}}
+      
+      {{/* مثال: إذا كان لديك partial للخدمات */}}
+      {{/* {{ partial "services.html" . }} */}}
+  </div>
+
 {{ end }}
