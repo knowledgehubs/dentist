@@ -1,55 +1,32 @@
-micky_extract/
-  MICKY-main/
-    .gitignore
-    .nojekyll
-    LICENSE
-    README.md
-    archetypes/
-      default.md
-    assets/
-      css/
-        custom.css
-      js/
-        custom.js
-    config/
-      _default/
-        config.toml
-        hugo.toml
-        menus.toml
-        params.toml
-    content/
-      about/
-        _index.md
-      cases/
-        before-after-01.md
-        before-after-02.md
-        before-after-03.md
-      contact/
-        _index.md
-      home/
-        _index.md
-    data/
-      settings.yaml
-    layouts/
-      index.html
-      partials/
-        footer.html
-        header.html
-        hero.html
-        navbar.html
-    public/
-      index.html
-    resources/
-      _gen/
-        assets/
-    static/
-      uploads/
-        01-case-before.jpg
-        01-case-after.jpg
-        02-case-before.jpg
-        02-case-after.jpg
-        03-case-before.jpg
-        03-case-after.jpg
-        TEST
-      js/
-        main.js
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}" dir="{{ if eq .Site.Language.Lang "ar" }}rtl{{ else }}ltr{{ end }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <meta name="google-site-verification" content="6VtKNI5qnSYsfjCTBMfnm9PuZjjR7aYh6crmofpS8yw" />
+
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    
+    {{ $style := resources.Get "css/custom.css" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    
+    <link rel="icon" type="image/x-icon" href="{{ "images/favicon.ico" | relURL }}">
+</head>
+<body>
+    
+    {{ partial "header.html" . }}
+    
+    <main id="main-content">
+        {{ block "main" . }}{{ end }}
+    </main>
+    
+    {{ partial "footer.html" . }}
+    
+</body>
+</html>
