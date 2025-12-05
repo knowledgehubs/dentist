@@ -3,7 +3,7 @@ name: Deploy Hugo Portfolio to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - main  # 👈 تم التعديل هنا من master إلى main
   workflow_dispatch:
 
 permissions:
