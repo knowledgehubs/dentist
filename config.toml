@@ -1,7 +1,7 @@
 baseURL = "https://knowledgehubs.github.io/dentist/"
 languageCode = "en"
 defaultContentLanguage = "en"
-title = "Dr. Portfolio"
+title = "دكتور مايكل نبيل"
 
 [languages]
   [languages.en]
