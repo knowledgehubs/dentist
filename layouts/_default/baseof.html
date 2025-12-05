@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <meta name="google-site-verification" content="6VtKNI5qnSYsfjCTBMfnm9PuZjjR7aYh6crmofpS8yw" />
-
     <meta name="description" content="{{ .Site.Params.description }}">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
     
@@ -13,8 +12,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     
-    {{ $style := resources.Get "css/custom.css" | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{ $style := resources.Get "css/custom.css" }}
+    {{ if $style }}
+        {{ $style = $style | toCSS | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{ else }}
+        <script>console.warn("custom.css not found in assets/css/");</script>
+    {{ end }}
     
     <link rel="icon" type="image/x-icon" href="{{ "images/favicon.ico" | relURL }}">
 </head>
