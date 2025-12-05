@@ -1,46 +1,17 @@
-<section id="home" class="section hero-section">
-    <div class="hero-content">
-        <!-- Profile Image -->
-        <div class="profile-image-container">
-            <img 
-                src="{{ print "images/" .Site.Data.en.hero.profile_image | relURL }}" 
-                alt="{{ .Site.Data.en.hero.name }}"
-                class="profile-image"
-                loading="lazy"
-            >
-        </div>
-        
-        <!-- Name -->
-        <h1 class="hero-name" data-en="{{ .Site.Data.en.hero.name }}" data-ar="{{ .Site.Data.ar.hero.name }}">
-            {{ .Site.Data.en.hero.name }}
-        </h1>
-        
-        <!-- Tagline -->
-        <p class="hero-tagline" data-en="{{ .Site.Data.en.hero.tagline }}" data-ar="{{ .Site.Data.ar.hero.tagline }}">
-            {{ .Site.Data.en.hero.tagline }}
-        </p>
-        
-        <!-- Graduation -->
-        <p class="hero-graduation" data-en="{{ .Site.Data.en.hero.graduation }}" data-ar="{{ .Site.Data.ar.hero.graduation }}">
-            {{ .Site.Data.en.hero.graduation }}
-        </p>
-        
-        <!-- Current Position -->
-        {{ if .Site.Data.en.hero.current_position.role }}
-        <div class="hero-position">
-            <p>
-                <span data-en="Now working as" data-ar="يعمل حالياً كـ">Now working as</span>
-                <strong data-en="{{ .Site.Data.en.hero.current_position.role }}" data-ar="{{ .Site.Data.ar.hero.current_position.role }}">
-                    {{ .Site.Data.en.hero.current_position.role }}
-                </strong>
-                {{ if .Site.Data.en.hero.current_position.clinic }}
-                <span data-en="at" data-ar="في">at</span>
-                <strong data-en="{{ .Site.Data.en.hero.current_position.clinic }}" data-ar="{{ .Site.Data.ar.hero.current_position.clinic }}">
-                    {{ .Site.Data.en.hero.current_position.clinic }}
-                </strong>
-                {{ end }}
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                مرحباً، أنا <span class="highlight-neon">{{ .Site.Params.your_name | default "اسمك هنا" }}</span>.
+                <br>أصمم تجارب رقمية <span class="highlight-neon">مبهرة</span>.
+            </h1>
+            <p class="hero-subtitle">
+                {{ .Site.Params.tagline | default "هنا تكتب الوصف المختصر الخاص بك. مطور واجهات، مصمم تجربة مستخدم، ومتخصص في بناء مواقع الويب الحديثة." }}
             </p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-neon">تواصل معي</a>
+                <a href="#cases" class="btn btn-glass">شاهد أعمالي</a>
+            </div>
         </div>
-        {{ end }}
     </div>
-</section>
+    </section>
