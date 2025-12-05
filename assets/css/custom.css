@@ -43,6 +43,9 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
     background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
+.nav-links { display: flex; gap: 20px; }
+.nav-links a { color: #ccc; font-weight: bold; }
+.nav-links a:hover { color: var(--neon-cyan); }
 
 /* الهيرو */
 .hero {
